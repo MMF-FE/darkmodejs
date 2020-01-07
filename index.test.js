@@ -30,6 +30,7 @@ describe('darkmode', () => {
         addListener: f => f,
         removeListener: f => f
       }));
+
       darkmode({ onChange });
       expect(onChange).toHaveBeenCalledTimes(1);
       expect(onChange).toHaveBeenCalledWith(themes.DARK, themes);

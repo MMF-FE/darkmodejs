@@ -1,18 +1,32 @@
-declare enum Theme {
-  DARK = 'dark',
-  LIGHT = 'light',
-  NO_PREF = 'no-preference',
-  NO_SUPP = 'no-support'
+export declare enum Theme {
+  DARK = "dark",
+  LIGHT = "light",
+  NO_PREF = "no-preference",
+  NO_SUPP = "no-support"
 }
 
-interface Config {
+export interface Config {
   onChange: (activeTheme: Theme, themes: typeof Theme) => void;
 }
 
-interface DarkModeJS {
+export interface DarkModeJSInstance {
   removeListeners: () => void;
 }
 
-declare function darkmodejs(config: Config): DarkModeJS;
+export interface SupportInfo {
+  darkQuery: MediaQueryList;
+  lightQuery: MediaQueryList;
+  noPrefQuery: MediaQueryList;
+  isSupported: boolean;
+}
 
-export = darkmodejs;
+export interface DarkModeJS {
+  (config: Config): DarkModeJSInstance;
+  getSupportInfo(): SupportInfo;
+  getThemes(): Theme;
+}
+
+// declare function (config: Config): DarkModeJSInstance;
+declare let darkmodejs: DarkModeJS;
+
+export default darkmodejs;
