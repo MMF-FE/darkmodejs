@@ -23,6 +23,9 @@
   "bugs": {
     "url": "git@github.com:MMF-FE/darkmodejs.git/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "git@github.com:MMF-FE/darkmodejs.git#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
